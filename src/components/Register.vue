@@ -21,6 +21,7 @@
 <script>
 import Axios from 'axios'
 const url = 'http://localhost:3000'
+
 export default {
   name:"register",
     data(){
@@ -34,7 +35,9 @@ export default {
     },
     methods:{
       // CORS 
-      registerSystem(){     
+      registerSystem(){    
+        // Axios.get().then()
+        
         // Axios.get(url +'/register',{
         //   params: this.newUser
         // }).then(function(response){
@@ -42,17 +45,17 @@ export default {
         // })
         // this.fullscreenLoading = true;
         // that = this
-        Axios.post(url + '/register',{
-          params:this.newUser
-        }).then((response)=>{
-          console.log(response)
-            // if(response.data.state =="success"){
-            //   this.$message('注册用户成功');
-            // }
-            // else{
-            //    this.$message('注册用户失败');
-            // }         
-        })
+        // Axios.post(url + '/register',{
+        //   params:this.newUser
+        // }).then((response)=>{
+        //   console.log(response)
+        //     // if(response.data.state =="success"){
+        //     //   this.$message('注册用户成功');
+        //     // }
+        //     // else{
+        //     //    this.$message('注册用户失败');
+        //     // }         
+        // })
       }
     }
 };

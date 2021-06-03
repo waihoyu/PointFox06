@@ -34,34 +34,22 @@ export default {
         }
     },
     methods:{
-      // CORS 
-      registerSystem(){    
-        // Axios.get().then()
-        
-        // Axios.get(url +'/register',{
-        //   params: this.newUser
-        // }).then(function(response){
-        //   alert(response.data.state + '\n' +response.data.message )
-        // })
-        // this.fullscreenLoading = true;
-        // that = this
-        // Axios.post(url + '/register',{
-        //   params:this.newUser
-        // }).then((response)=>{
-        //   console.log(response)
-        //     // if(response.data.state =="success"){
-        //     //   this.$message('注册用户成功');
-        //     // }
-        //     // else{
-        //     //    this.$message('注册用户失败');
-        //     // }         
-        // })
-      }
+     registerSystem(){
+       Axios.get(url+'/register',{
+         params:this.newUser
+       }).then((resx)=>{
+        //  console.log(resx)
+        if(resx.data.state == "success"){
+          this.$message(resx.data.message)
+        }
+       })
+     }   
     }
 };
 </script>
 
 <style >
+
 
 #registerWrapper {
   /* background-color: purple; */
